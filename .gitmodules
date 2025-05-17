@@ -1,0 +1,3 @@
+[submodule "bots/echo-bot"]
+	path = bots/echo-bot
+	url = https://github.com/jtm429/telegram-bot-core.git

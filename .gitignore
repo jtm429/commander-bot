@@ -7,6 +7,11 @@
 .token
 allowed_users.txt
 
+#ignore bots in the bots folder besides the example bot echo-bot
+bots/*
+!bots/echo-bot
+!bots/echo-bot/**
+
 # IDE/editor configs
 .vscode/
 .idea/
