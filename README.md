@@ -1,49 +1,39 @@
-# Telegram Bot Template (Rust)
+# Commander Bot
 
-This project is a template to be used when making Telegram bots.
+Hey! Hey, you! You like bots, right? Course you do. You're a bot guy. And lemme tell ya—I got **the** bot for your bots. You ever wish there was a bot that could wrangle your other bots? Keep 'em in line? Boot 'em up, shut 'em down? Fuggedaboutit. You're lookin' at *Commander Bot*.
 
-Gone are the days when I will get a bot idea and spend hours fiddling with the API when there's code to be written.
+### 🚀 What’s This Thing Do?
 
----
+Commander Bot is your **Telegram-powered bot manager**. You talk to Commander Bot on Telegram, and it talks to the bots in your `bots/` folder. Like a little union boss for your digital minions.
 
-## 📜 Hark, Yee Traveler
+### 🧰 Setup (It’s Easy, I Swear)
 
-Should thou wish to fork my content, thou should be aware of several things:
+1. **Get your Telegram API token** from the BotFather.
+2. **Put that bad boy in a `.token` file** in the root directory. Just the token, no quotes, no spaces.
+3. **Clone or add your bots** into the `bots/` folder. Each one should be its own little Rust project.
+4. **Important, listen here:** You gotta run `cargo build --release` inside each bot’s folder *before* you run Commander Bot. Otherwise they’ll run like wet spaghetti. Build ‘em first, capisce?
 
-1. **An API key** must be created using the Telegram [@BotFather](https://t.me/botfather).
-2. This key should be saved in a file called **`.token`** (do *not* commit this file).
-3. Additionally, thou shall need to create a file named **`allowed_users.txt`** containing **your Telegram user ID**.
+### 🕹️ How to Use
 
-Example:
-```
-123456789
-```
+Start Commander Bot and message it on Telegram:
 
-You can get your Telegram ID by messaging [@userinfobot](https://t.me/userinfobot).
+* `/run echo-bot` — Starts the bot in `bots/echo-bot`
+* `/stop echo-bot` — Tucks it back in for a nap
 
----
+You add whatever bots you want. You don’t gotta tell Commander in advance. He’s flexible.
 
-## ⚔️ Access Control
+### 🛠️ Requirements
 
-The bots I intend to create are for **personal use only**.
+* Rust (you want stable builds, don’t come in here with that nightly nonsense)
+* A `.token` file for Commander, and `.token` files inside each bot’s folder
+* Bots must have a `Cargo.toml` and an entry point at `src/main.rs`
 
-If thou should wish to create a **public-facing bot**, thou must:
-- Navigate to `src/bot.rs`
-- Comment out or remove the lines that check the user's ID against `allowed_users.txt`
+### 🧼 Cleanup
 
----
+Commander Bot only runs one copy of each bot at a time. You want two copies? You name it different. I don’t make the rules (actually I do, but still).
 
-## 🚀 Running the Bot
+### ❗ One More Thing
 
-```bash
-cargo build --release
-cargo run --release
-```
+Each bot is run from **its own folder**, so its `.token` file won’t get mixed up with Commander’s. You keep ‘em separate, you keep ‘em clean.
 
-Or run the built binary:
-
-```bash
-./target/release/telegram-bot-core
-```
-
-May your bots run smoothly and your updates never be duplicated.
+Now go on. Get outta here and manage your bots like a professional.
