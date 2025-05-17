@@ -7,7 +7,7 @@ use std::process::{Child, Command, Stdio};
 use std::sync::{Arc, Mutex};
 use tokio::time::{sleep, Duration};
 
-const POLL_INTERVAL: u64 = 2; // every 5 minutes (2 seconds for testing)
+const POLL_INTERVAL: u64 = 300; // every 5 minutes 
 
 type SharedProcessMap = Arc<Mutex<HashMap<String, Child>>>;
 
